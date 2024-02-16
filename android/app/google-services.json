@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "589146887162",
+    "project_id": "gisaxiom-66d49",
+    "storage_bucket": "gisaxiom-66d49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589146887162:android:4ef90cda8d19f187118a43",
+        "android_client_info": {
+          "package_name": "com.example.gis_axiom_interview"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5cjaCY_Gh2HPZnuuHXSPNUUIwlnH7U-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
