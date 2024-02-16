@@ -50,97 +50,100 @@ class ViewPage extends ConsumerWidget {
                 final product = products.isNotEmpty
                     ? products[index % products.length]
                     : null;
-                return Column(
-                  children: [
-                    SizedBox(
-                      height: space.space_400,
-                    ),
-                    Center(
-                      child: Stack(
-                        children: [
-                          Container(
-                            width: space.space_900 * 5,
-                            height: space.space_900 * 3.5,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                bottomRight: Radius.circular(space.space_300),
-                                topLeft: Radius.circular(space.space_300),
-                              ),
-                              image: DecorationImage(
-                                image: NetworkImage(menuItem.sliderImage!),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 90,
-                            bottom: 60,
-                            top: 70,
-                            child: SizedBox(
-                              width: space.space_900 * 4,
-                              child: Text(
-                                menuItem.name ?? '',
-                                style: TextStyle(
-                                  color: colors.backgroundLight,
-                                  fontWeight: FontWeight.w200,
-                                  fontSize: space.space_600,
-                                  fontFamily: 'FONT1',
+                return Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: space.space_400,
+                      ),
+                      Center(
+                        child: Stack(
+                          children: [
+                            Container(
+                              // width: space.space_900 * 5,
+                              height: space.space_900 * 3.5,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(space.space_300),
+                                  topLeft: Radius.circular(space.space_300),
+                                ),
+                                image: DecorationImage(
+                                  image: NetworkImage(menuItem.sliderImage!),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: space.space_400),
-                    DottedBorder(
-                      borderType: BorderType.RRect,
-                      padding: EdgeInsets.all(space.space_100),
-                      strokeWidth: 1,
-                      child: product != null
-                          ? SizedBox(
-                              width: space.space_900 * 4.5,
-                              height: space.space_900 * 2.3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      SizedBox(width: space.space_200),
-                                      CircleAvatar(
-                                        backgroundImage:
-                                            NetworkImage(product.image ?? ''),
-                                        radius: space.space_500,
-                                      ),
-                                      SizedBox(width: space.space_200),
-                                      Text(
-                                        menuItem.name ?? '',
-                                        style: typography.orderCustomervalue,
-                                      ),
-                                    ],
+                            Positioned(
+                              left: 90,
+                              bottom: 60,
+                              top: 70,
+                              child: SizedBox(
+                                width: space.space_900 * 4,
+                                child: Text(
+                                  menuItem.name ?? '',
+                                  style: TextStyle(
+                                    color: colors.backgroundLight,
+                                    fontWeight: FontWeight.w200,
+                                    fontSize: space.space_600,
+                                    fontFamily: 'FONT1',
                                   ),
-                                  Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Text(
-                                      'Rs ${product.amount ?? ''}',
-                                      style: TextStyle(
-                                        fontFamily: 'FONT1',
-                                        fontSize: space.space_200,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: space.space_200),
-                                  Text(
-                                    product.desc ?? '',
-                                    style: typography.uiSemibold,
-                                  ),
-                                ],
+                                ),
                               ),
                             )
-                          : SizedBox(), // If product is null, return an empty SizedBox
-                    ),
-                  ],
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: space.space_400),
+                      DottedBorder(
+                        borderType: BorderType.RRect,
+                        padding: EdgeInsets.all(space.space_100),
+                        strokeWidth: 1,
+                        child: product != null
+                            ? SizedBox(
+                                width: space.space_900 * 4.5,
+                                height: space.space_900 * 2.3,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SizedBox(width: space.space_200),
+                                        CircleAvatar(
+                                          backgroundImage:
+                                              NetworkImage(product.image ?? ''),
+                                          radius: space.space_500,
+                                        ),
+                                        SizedBox(width: space.space_200),
+                                        Text(
+                                          menuItem.name ?? '',
+                                          style: typography.orderCustomervalue,
+                                        ),
+                                      ],
+                                    ),
+                                    Align(
+                                      alignment: Alignment.bottomRight,
+                                      child: Text(
+                                        'Rs ${product.amount ?? ''}',
+                                        style: TextStyle(
+                                          fontFamily: 'FONT1',
+                                          fontSize: space.space_200,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: space.space_200),
+                                    Text(
+                                      product.desc ?? '',
+                                      style: typography.uiSemibold,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : const SizedBox(),
+                      ),
+                    ],
+                  ),
                 );
               },
             );

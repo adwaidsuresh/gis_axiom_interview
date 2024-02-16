@@ -36,39 +36,42 @@ class LoginPage extends StatelessWidget {
           ),
           Positioned(
             bottom: space.space_800 * 4,
-            left: space.space_800,
-            child: SizedBox(
-              height: space.space_700,
-              width: space.space_900 * 4,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                    shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(space.space_200),
-                    ),
-                    backgroundColor: colors.backgroundLight),
-                onPressed: () async {
-                  try {
-                    Authentication.signInWithGoogle();
-                  } on LoginFailedException catch (_) {
-                    Navigator.pop(context);
-                  }
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset('assets/google.png'),
-                    Text(
-                      'Google Login',
-                      style: typography.h700,
-                    )
-                  ],
+            left: 0,
+            right: 0,
+            child: Center(
+              child: SizedBox(
+                height: space.space_700,
+                width: space.space_900 * 4,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                      shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.circular(space.space_200),
+                      ),
+                      backgroundColor: colors.backgroundLight),
+                  onPressed: () async {
+                    try {
+                      Authentication.signInWithGoogle();
+                    } on LoginFailedException catch (_) {
+                      Navigator.pop(context);
+                    }
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset('assets/google.png'),
+                      Text(
+                        'Google Login',
+                        style: typography.h700,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
           Positioned(
             bottom: space.space_900,
-            left: space.space_900 * 1.5,
+            left: space.space_900 * 1.3,
             child: Text(
               'Discover our Menu',
               style: TextStyle(
